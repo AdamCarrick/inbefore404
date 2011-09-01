@@ -1,0 +1,26 @@
+﻿<Window x:Class="wpfInBefore404.windowAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="windowAbout" Height="584" Width="563" Loaded="Window_Loaded">
+    <Grid>
+
+        <TabControl Name="tabControl1" Margin="0,0,0,34">
+            <TabItem Name="tabItemAbout" Header="About">
+                <Grid>
+                    <Frame Source="pack://siteoforigin:,,,/content/about.html" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabItemNotes" Header="Release Notes">
+                <Grid>
+                    <Frame Source="pack://siteoforigin:,,,/content/notes.html" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabLicense" Header="License">
+                <Grid>
+                    <Frame Source="pack://siteoforigin:,,,/content/license.html" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Label Content="Label" Height="28" Name="lblVersion" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

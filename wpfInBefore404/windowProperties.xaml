@@ -1,0 +1,27 @@
+﻿<Window x:Class="wpfInBefore404.windowProperties"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="windowProperties" Height="368" Width="420" xmlns:my="http://schemas.AvalonControls/AvalonControlsLibrary/Controls">
+    <Grid>
+        <Label Name="label1" Height="24" FontSize="12" HorizontalAlignment="Left" Margin="12,12,0,0" VerticalAlignment="Top" Width="125">Watch Thread Name:</Label>
+        <TextBox Name="txtName" Height="24" FontSize="12" Margin="143,12,12,0" VerticalAlignment="Top" />
+        <Label Name="label2" FontSize="12" Height="24" HorizontalAlignment="Left" Margin="12,42,0,0" VerticalAlignment="Top" Width="60">URL:</Label>
+        <TextBox Name="txtURL" FontSize="12" Height="24" Margin="78,42,12,0" VerticalAlignment="Top" />
+        <Label Name="label3" FontSize="12" Height="24" HorizontalAlignment="Left" Margin="12,72,0,0" VerticalAlignment="Top" Width="91">Dest Folder:</Label>
+        <TextBox Name="txtDestinationFolder" FontSize="12" Height="24" Margin="109,72,47,0" VerticalAlignment="Top" />
+        <Label Name="label4" FontSize="12" HorizontalAlignment="Left" Margin="12,102,0,0" Width="117" Height="24" VerticalAlignment="Top">Dest Filename:</Label>
+        <TextBox Name="txtDestinationFilename" FontSize="12" Margin="109,102,12,0" Height="23" VerticalAlignment="Top" />
+        <Label Name="label5" FontSize="12" HorizontalAlignment="Left" Margin="12,192,0,0" Width="133" Height="24" VerticalAlignment="Top">Download Link Types:</Label>
+        <TextBox Name="txtLinkTypes" FontSize="12" Margin="151,192,12,0" Height="24" VerticalAlignment="Top" />
+        <Label Name="label6" FontSize="12" Height="24" HorizontalAlignment="Left" Margin="12,222,0,0" VerticalAlignment="Top" Width="91">Site Username:</Label>
+        <TextBox Name="txtUsername" FontSize="12" Height="24" Margin="109,222,12,0" VerticalAlignment="Top" />
+        <Label Name="label7" FontSize="12" HorizontalAlignment="Left" Margin="12,252,0,0" Width="91" Height="24" VerticalAlignment="Top">Site Password:</Label>
+        <CheckBox Name="chkDownloadImages" Height="24" FontSize="12" Margin="16,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="213">Download Images On Page</CheckBox>
+        <Label Name="label8" Height="24" FontSize="12" HorizontalAlignment="Left" Margin="12,132,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="91">Update Timer:</Label>
+        <PasswordBox Name="txtPassword" Height="24" FontSize="12" Margin="109,251,12,0" VerticalAlignment="Top" />
+        <Button Name="button1" Height="24" FontSize="12" HorizontalAlignment="Right" Margin="0,72,12,0" VerticalAlignment="Top" Width="29">...</Button>
+        <Button Name="button2" Height="24" FontSize="12" HorizontalAlignment="Right" Margin="0,292,12,0" VerticalAlignment="Top" Width="75">Cancel</Button>
+        <Button Name="button3" FontSize="12" Height="24" HorizontalAlignment="Right" Margin="0,292,93,0" VerticalAlignment="Top" Width="75">Okay</Button>
+        <my:TimePicker HorizontalAlignment="Left" Margin="109,131,0,0" Name="timePicker1" VerticalAlignment="Top" />
+    </Grid>
+</Window>

@@ -1,0 +1,86 @@
+﻿<Window x:Class="wpfInBefore404.windowMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="windowMain" Height="480" Width="800" Loaded="Window_Loaded" Closed="windowMainOnClose">
+    <Grid>
+        <TextBox Name="txtURL" Height="23" Margin="126,34,47,0" VerticalAlignment="Top" FontSize="15" MaxLength="0" GotFocus="txtURL_GotFocus" TextChanged="txtURL_TextChanged" />
+        <Button Name="button1" Height="24" HorizontalAlignment="Right" Margin="0,33,12,0" VerticalAlignment="Top" Width="29" VerticalContentAlignment="Center" FontSize="14" IsDefault="true" Click="btnAddClicked">+</Button>
+        <Menu Name="menu1" Height="27" VerticalAlignment="Top">
+            <MenuItem Header="InBefore404" IsTabStop="false">
+                <MenuItem Header="Save Watch List" Click="menuSaveWatchList_Click"/>
+                <MenuItem Header="Load Watch List" Click="menuLoadWatchList_Click"/>
+                <MenuItem Header="Preferences" Click="MenuPreferences_Click"/>
+                <MenuItem Header="Exit" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="WatchThreads" IsTabStop="false">
+                <MenuItem Header="Add Advanced Watch" Click="AddAdvanced_Click"/>
+                <Separator />
+                <MenuItem Header="Start All" Click="menuStartAll_Click"/>
+                <MenuItem Header="Stop All" Click="menuStopAll_Click" />
+                <MenuItem Header="Update/Restart All" />
+                <Separator />
+                <MenuItem Header="Remove All 404 Threads" Click="menuRemoveAll404_Click" />
+            </MenuItem>
+            <MenuItem Header="Help" IsTabStop="false">
+                <MenuItem Header="Print Debug Info" Click="PrintDebugInfo_Click"/>
+                <MenuItem Header="About" Click="HelpAbout_Click" />
+            </MenuItem>
+        </Menu>
+        <Label Name="label1" Height="28" HorizontalAlignment="Left" Margin="0,33,0,0" VerticalAlignment="Top" Width="120">Quick Add URL:</Label>
+        <TabControl Name="tabControl1" Margin="0,63,0,0">
+            <TabItem Name="tabWatchThreads" Header="Watch Threads" FontSize="14">
+                <Grid>
+                    <ListView Name="lvWatchList" IsTabStop="false" MouseDoubleClick="lvWatchList_MouseDoubleClick">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Browse Folder" Click="contextBrowse" />
+                                <Separator />
+                                <MenuItem Header="Start/Update" Click="contextStart" />
+                                <MenuItem Header="Stop Running" Click="contextStop"/>
+                                <MenuItem Header="Delete Selected" Click="contextDelete"/>
+                                <Separator />
+                                <MenuItem Header="Properties" Click="contextProperties"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="90" Header="Status" DisplayMemberBinding="{Binding Status}" />
+                                <GridViewColumn Width="350" Header="URL" DisplayMemberBinding="{Binding URL}" />
+                                <GridViewColumn Width="60" Header="Done" DisplayMemberBinding="{Binding Downloaded}" />
+                                <GridViewColumn Width="60" Header="Total" DisplayMemberBinding="{Binding Total}" />
+                                <GridViewColumn Width="110" Header="Last Update" DisplayMemberBinding="{Binding LastUpdate}" />
+                                <GridViewColumn Width="110" Header="Last Change" DisplayMemberBinding="{Binding LastChange}" />
+                                <GridViewColumn Width="75" Header="Name" DisplayMemberBinding="{Binding Name}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabDownloads" Header="Active Downloads" FontSize="14">
+                <Grid>
+                    <ListView Name="lvDownloadManager" IsTabStop="false" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="370" Header="URL" DisplayMemberBinding="{Binding URL}" />
+                                <GridViewColumn Width="40" Header="%" DisplayMemberBinding="{Binding PercentDownloaded}" />
+                                <GridViewColumn Width="90" Header="Downloaded" DisplayMemberBinding="{Binding BytesDownloaded}" />
+                                <GridViewColumn Width="90" Header="Total" DisplayMemberBinding="{Binding BytesTotal}" />
+                                <GridViewColumn Width="50" Header="Retries" DisplayMemberBinding="{Binding Retries}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabLog" Header="Log" FontSize="14">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="230" />
+                        <ColumnDefinition Width="538" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="txtDebug" VerticalScrollBarVisibility="Auto" FontSize="12" Margin="0,0,0,24" FontFamily="Lucida Console Regular" IsReadOnly="true" Grid.ColumnSpan="2" SourceUpdated="txtDebug_SourceUpdated" />
+                    <Button Name="btnClearLog" Click="btnClearLog_Click" FontSize="12" Height="22" HorizontalAlignment="Left" IsTabStop="false" VerticalAlignment="Bottom" Width="89">Clear Log</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
